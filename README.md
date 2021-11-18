@@ -17,9 +17,9 @@ The absolute least amount you need to run this project
 
 The three sites serve locally on these ports:
 
-Core GraphQL Server: 3000
-Admin: 4080
-Storefront: 4000
+ - Core GraphQL Server: 3000
+ - Admin: 4080
+ - Storefront: 4000
 
 Your data should be saved between restarts in a local docker volume
 
