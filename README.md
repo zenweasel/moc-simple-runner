@@ -10,10 +10,10 @@ The absolute least amount you need to run this project
 * Clone this project into a directory
 
 ## To Launch core/admin/storefront
-  * `docker compose up -d`
+  * `docker-compose up -d`
 
 ## To view logs from core
-* `docker compose logs -f api`
+* `docker-compose logs -f api`
 
 The three sites serve locally on these ports:
 
