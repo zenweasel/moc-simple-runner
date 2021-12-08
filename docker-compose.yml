@@ -1,40 +1,33 @@
 version: "3.4"
 
-networks:
-  reaction:
-    external:
-      name: reaction.localhost
 
 services:
   api:
-    image: reactioncommerce/reaction:4.1.4
+    image: reactioncommerce/reaction:4.1.5
     depends_on:
       - mongo
     env_file:
       - ./.core.env
     networks:
       default:
-      reaction:
     ports:
       - "3000:3000"
 
   storefront:
-    image: reactioncommerce/example-storefront:5.1.0
+    image: reactioncommerce/example-storefront:5.1.1
     env_file:
       - ./.storefront.env
     networks:
       default:
-      reaction:
     ports:
       - "4000:4000"
 
   admin:
-    image: reactioncommerce/admin:4.0.0-beta.12
+    image: reactioncommerce/admin:4.0.0-beta.14
     env_file:
       - ./.admin.env
     networks:
       default:
-      reaction:
     ports:
       - "4080:4080"
       - "9231:9229"
@@ -44,7 +37,6 @@ services:
     command: mongod --oplogSize 128 --replSet rs0 --storageEngine=wiredTiger
     networks:
       default:
-      reaction:
     ports:
       - "27017:27017"
     volumes:
